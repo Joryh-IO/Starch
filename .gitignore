@@ -4,6 +4,17 @@ target/
 !**/src/main/**/target/
 !**/src/test/**/target/
 
+.gitattributes
+.gitignore
+.mvn
+.settings
+target
+.classpath
+.project
+mvnw
+mvnw.cmd
+src/test
+
 ### STS ###
 .apt_generated
 .classpath
