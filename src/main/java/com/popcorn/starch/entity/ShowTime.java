@@ -2,6 +2,7 @@ package com.popcorn.starch.entity;
 
 import java.util.Date;
 
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -10,6 +11,8 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
+import jakarta.persistence.Temporal;
+import jakarta.persistence.TemporalType;
 
 @Entity
 @Table(name="showtime")
@@ -25,11 +28,21 @@ public class ShowTime {
 	private Movie movie;
 	
 	@Column(name="starttime")
+	@Temporal(TemporalType.TIME) 
 	private Date starttime;
 	
 	@Column(name="endtime")
+	@Temporal(TemporalType.TIME)  
 	private Date endtime;
 	
+	@Column(name="startDate")
+	private Date startDate;
+	
+	@Column(name="endDate")
+	private Date endDate;
+	
+	
+
 	@ManyToOne
 	@JoinColumn(name="tid")
 	private Theater theater;
@@ -107,6 +120,22 @@ public class ShowTime {
 		this.modifiedDate = modifiedDate;
 	}
 
+	public Date getStartDate() {
+		return startDate;
+	}
+
+	public void setStartDate(Date startDate) {
+		this.startDate = startDate;
+	}
+
+	public Date getEndDate() {
+		return endDate;
+	}
+
+	public void setEndDate(Date endDate) {
+		this.endDate = endDate;
+	}
+	
 	@Override
 	public String toString() {
 		return "ShowTime [stid=" + stid + ", starttime=" + starttime + ", endtime=" + endtime + ", theater=" + theater
