@@ -19,7 +19,7 @@
             <h3>Sign up</h3>
             <hr>
             <div class="in">
-                <form action="logup" method="GET">
+                <form action="auth" method="GET">
                     <p>Username</p>
                     <input type="text" name="username">
                     <p>Password</p>
@@ -33,7 +33,7 @@
             <h3>Sign in</h3>
             <hr>
             <div class="in">
-                <form action="login" method="GET">
+                <form action="auth" method="POST">
                     <p>Username</p>
                     <input type="text" name="username">
                     <p>Password</p>

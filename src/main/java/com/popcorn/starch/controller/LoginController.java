@@ -37,14 +37,16 @@ public class LoginController {
 	}
 
 	@PostMapping("/auth")
-	public String authenticate(@RequestParam("username") String username, @RequestParam("password") String password,
+	public String authenticateUser(@RequestParam("username") String username, @RequestParam("password") String password,
 			Model model) {
+		
+		System.out.println("auth visited");
 		User loggedInUser = loginService.authenticateUser(username, password);
 		if (loggedInUser != null) {
 			model.addAttribute("currUser", loggedInUser);
 			List<Movie> movieList = movieService.getAllMovies();
 			model.addAttribute("movies", movieList);
-			return "movie_list";
+			return "movie";
 		} else {
 			return "login";
 		}
