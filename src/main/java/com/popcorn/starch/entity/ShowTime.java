@@ -40,8 +40,6 @@ public class ShowTime {
 	
 	@Column(name="endDate")
 	private Date endDate;
-	
-	
 
 	@ManyToOne
 	@JoinColumn(name="tid")

@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -25,49 +26,62 @@
         <div class="image" style="background-image: url('${currentMovie.getPosterUrl()}')" >  
         </div>
         <div class="matter">
-            <h4>Treding</h4>
+            <h4>Trending</h4>
                 <h3>${currentMovie.getTitle()}</h3>
                 <p>"${currentMovie.description}"</p>
                 <p>ratings: ${currentMovie.avgratings}</p>
                 <p>Language: ${currentMovie.language}</p>
                 <p>Duration:</p>
-
-        </div>
-    </div>
-
-
-    
-    <div class="theaterlist">
+		
+				
+	<div class="chooselist">
         <h3>Theaters</h3>
         
         <!-- Iteration start -->
-        <div class="slide">
-            <div class="data">
-                <p>Theater</p>
-                <p>Date</p>
-                <p>start Time</p> 
-                <p>Status</p>
-                <button>Select</button>
-            </div>
-            <!-- Iteration end -->
+        <c:forEach var="theater" items="${theaters}">
             
+            	<table>
+            		<tr>
+            			<td>${theater.theaterName }</td>
+            			<td>${theater.city }</td>
+            			<td>${theater.theaterName }</td>
+            			<button onclick="callApi(${theater.tid })">Select</button>
+            		</tr>
+            	</table>
+            
+            <!-- Iteration end -->
+        </c:forEach>
+    </div>
+
+
         </div>
     </div>
+
+
+    
+
+
+    
+
     
     
     
     
     
-    <div class="Show-Times:">
+    <div class="theaterlist">
         <h3>ShowTimes:</h3>
         
         <!-- Iteration start -->
-        <div class="slide">
+        
+        <div class="slide" id="stcontainer" >
             <div class="data">
+            	<p>index</p>
                 <p>Theater</p>
                 <p>Date</p>
                 <p>start Time</p> 
                 <p>Status</p>
+                <p>start time</p>
+                <p>Seats left</p>
                 <button>Book Now</button>
             </div>
             <!-- Iteration end -->
@@ -78,4 +92,5 @@
     
     
 </body>
+<script type="text/javascript" src="${pageContext.request.contextPath}/scripts/movie.js"></script>
 </html>
