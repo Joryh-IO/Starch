@@ -38,6 +38,27 @@
 
     
     <div class="theaterlist">
+        <h3>Theaters</h3>
+        
+        <!-- Iteration start -->
+        <div class="slide">
+            <div class="data">
+                <p>Theater</p>
+                <p>Date</p>
+                <p>start Time</p> 
+                <p>Status</p>
+                <button>Select</button>
+            </div>
+            <!-- Iteration end -->
+            
+        </div>
+    </div>
+    
+    
+    
+    
+    
+    <div class="Show-Times:">
         <h3>ShowTimes:</h3>
         
         <!-- Iteration start -->
@@ -53,7 +74,6 @@
             
         </div>
     </div>
-    
     
     
     

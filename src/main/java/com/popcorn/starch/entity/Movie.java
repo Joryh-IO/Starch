@@ -9,10 +9,6 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.JoinTable;
-import jakarta.persistence.ManyToMany;
-import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
 @Entity
@@ -29,18 +25,6 @@ public class Movie {
 	
 	@Column(name="posterUrl")
 	private String posterUrl;
-	
-	@ManyToMany
-	@JoinTable(name="movie_theaters")
-	private List<Theater> theater = new ArrayList<>();;
-
-	public List<Theater> getTheater() {
-		return theater;
-	}
-
-	public void setTheater(List<Theater> theater) {
-		this.theater = theater;
-	}
 
 	@Column(name = "description")
 	private String description;

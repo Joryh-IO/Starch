@@ -12,7 +12,6 @@ import com.popcorn.starch.entity.Theater;
 @Repository
 public interface MovieRepository extends JpaRepository<Movie, Integer> {
 	
-	List<Theater> showAllTheatersFromMId();
 	
 }
 
