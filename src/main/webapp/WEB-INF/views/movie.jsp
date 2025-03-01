@@ -5,7 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Movie</title>
-<link rel="stylesheet" href="./Styles/movie.css" type="text/css">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/sty/movie.css" />
 </head>
 <body>
     <div class="nav">
@@ -22,22 +22,40 @@
     </div>
 
     <div class="movie">
-        <div class="image">  
+        <div class="image" style="background-image: url('${currentMovie.getPosterUrl()}')" >  
         </div>
         <div class="matter">
             <h4>Treding</h4>
-                <h3>Lost in sea</h3>
-                <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-                    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-                    Ut enim ad minim veniam,dolor sit amet, consectetur adipiscing elit, 
-                    sed do eiusmod tempor "</p>
-                <p>ratings:</p>
-                <p>Language:</p>
+                <h3>${currentMovie.getTitle()}</h3>
+                <p>"${currentMovie.description}"</p>
+                <p>ratings: ${currentMovie.avgratings}</p>
+                <p>Language: ${currentMovie.language}</p>
                 <p>Duration:</p>
 
-                <button>Book Now</button>
         </div>
     </div>
-    <footer></footer>
+
+
+    
+    <div class="theaterlist">
+        <h3>ShowTimes:</h3>
+        
+        <!-- Iteration start -->
+        <div class="slide">
+            <div class="data">
+                <p>Theater</p>
+                <p>Date</p>
+                <p>start Time</p> 
+                <p>Status</p>
+                <button>Book Now</button>
+            </div>
+            <!-- Iteration end -->
+            
+        </div>
+    </div>
+    
+    
+    
+    
 </body>
 </html>

@@ -5,7 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Profile</title>
-<link rel="stylesheet" href="./Styles/profile.css" type="text/css">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/sty/profile.css" />
 </head>
 <body>
     <div class="nav">

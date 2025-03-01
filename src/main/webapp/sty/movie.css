@@ -110,6 +110,7 @@ button{
     width: 400px;
     height: 420px;
     border: solid white;
+    background-size: cover;
 }
 
 .movie{
@@ -154,12 +155,67 @@ button{
 }
 
 
-footer{
-    background-image: url("70c.png");
-    background-size: cover;
-    /* position: fixed; */
-    bottom: 200px;
-    /* margin-top: 20px; */
-    /* background-color: #1f1423; */
-    height: 200px;
+
+
+
+.theaterlist{
+
+
+    margin:  20px 20px 0px 20px;
+    padding: 20px;
+    background-color: rgba(237, 237, 237, 0.142);
 }
+
+
+.slide{
+    display: flex;
+    align-items: center;
+    margin: 2px 0px;
+    padding: 5px;
+}
+ h3{
+    color: white;
+}
+.slide:hover{
+    background-color: #370a46;
+    transition: 0.3s;
+}
+.data{
+    width: 100%;
+    /* border: white solid; */
+    display: flex;
+    justify-content: space-evenly;
+
+}
+
+
+.data button{
+    appearance: none;
+	border: none;
+	outline: none;
+    text-decoration: none;
+    /* background-color:#080508; */
+    color:bisque;
+    cursor: pointer;
+    /* padding: 5px 10px; */
+    /* margin: 50px 0px; */
+    /* border-radius: 10px; */
+    font-size: 18px;
+
+}
+.data button:hover{
+    transition: 0.5s;
+    transform: translateY(-2px);
+    background-color: #de5454;
+    
+}
+p{
+    margin: 0;
+    color: rgb(255, 255, 255);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+
+
+

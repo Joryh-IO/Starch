@@ -5,8 +5,9 @@
 <head>
 <meta charset="UTF-8">
 <title>Booking</title>
-<link rel="stylesheet" href="./Styles/booking.css">
-<script src="./scripts/index.js"></script>
+
+<link rel="stylesheet" href="${pageContext.request.contextPath}/sty/booking.css" />
+<script src="${pageContext.request.contextPath}/scripts/booking.js"></script>
 </head>
 <body>
     <div class="nav">

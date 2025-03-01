@@ -1,17 +1,21 @@
 package com.popcorn.starch.entity;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.ManyToMany;
 import jakarta.persistence.Table;
 
 @Entity
 @Table(name="theaters")
 public class Theater {
+	
 	
 	
 	@Column(name="theaterName")
@@ -33,6 +37,18 @@ public class Theater {
 	
 	@Column(name="modifiedDate")
 	private Date modifiedDate;
+	
+	@ManyToMany(mappedBy = "theater")
+	private List<Movie> movies = new ArrayList<>();;
+	
+
+	public List<Movie> getMovies() {
+		return movies;
+	}
+
+	public void setMovies(List<Movie> movies) {
+		this.movies = movies;
+	}
 
 	public String getTheaterName() {
 		return theaterName;

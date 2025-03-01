@@ -5,7 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Paywall</title>
-<link rel="stylesheet" href="./Styles/paywall.css" type="text/css">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/sty/paywall.css" />
 </head>
 <body>
     <div class="nav">

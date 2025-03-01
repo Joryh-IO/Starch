@@ -46,7 +46,7 @@ public class LoginController {
 			model.addAttribute("currUser", loggedInUser);
 			List<Movie> movieList = movieService.getAllMovies();
 			model.addAttribute("movies", movieList);
-			return "movie";
+			return "index";
 		} else {
 			return "login";
 		}
