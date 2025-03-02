@@ -2,12 +2,12 @@ const parent = document.getElementsByClassName("theatercont")[0];
 const ORIGINAL = document.getElementById("stcontainer");
 parent.innerHTML = '';
 
-function callApi(id){
-	const apiUrl = `http://localhost:8085/popcorn/api/showtimes/getspecific?id=${id}`;
+function callApi(id, id2){
+	const apiUrl = `http://localhost:8085/popcorn/api/showtimes/getspecific?id=${id}&id2=${id2}`;
 	const apiData = {id : id}
 	var data;
 	var req = {
-		method:'POST',
+		method:'GET',
 		headers:{'Content-Type': 'application/json'}
 	}
 	fetch(apiUrl, req).then(response=>{

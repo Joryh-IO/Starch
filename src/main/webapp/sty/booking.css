@@ -183,3 +183,7 @@ p{
     padding: 20px;
     background-color: rgba(0, 0, 0, 0.434);
 }
+
+.r p{
+	text-align:center;
+}

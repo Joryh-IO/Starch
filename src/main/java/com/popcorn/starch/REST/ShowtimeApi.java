@@ -25,8 +25,8 @@ public class ShowtimeApi {
 	}
 	
 	@RequestMapping("/getspecific")
-	public List<ShowTime> getMovieShowTime(@RequestParam int id){
+	public List<ShowTime> getMovieShowTime(@RequestParam int id, @RequestParam int id2){
 		System.out.println(id);
-		return showTimeService.getSTByMovieId(id);
+		return showTimeService.getSTByMovieId(id, id2);
 	}
 }

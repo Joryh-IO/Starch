@@ -45,7 +45,7 @@
             			<td>${theater.theaterName }</td>
             			<td>${theater.city }</td>
             			<td>${theater.theaterName }</td>
-            			<td><button onclick="callApi(${theater.tid })">Select</button></td>
+            			<td><button onclick="callApi(${theater.tid },${currentMovie.mid })">Select</button></td>
             		</tr>
             	</table>            
         </c:forEach>

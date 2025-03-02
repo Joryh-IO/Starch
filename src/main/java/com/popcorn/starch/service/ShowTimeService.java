@@ -19,8 +19,8 @@ public class ShowTimeService {
 		return showTimeRepository.findAll();
 	}
 	
-	public List<ShowTime> getSTByMovieId(int movieid){
-		return showTimeRepository.getShowTimeByMovieId(movieid) ;
+	public List<ShowTime> getSTByMovieId(int theaterid, int movieid){
+		return showTimeRepository.getShowTimeByMovieId(theaterid, movieid) ;
 	}
 	
 	public Optional<ShowTime> getfromId(int id) {

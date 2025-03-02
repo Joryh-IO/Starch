@@ -12,7 +12,7 @@ import com.popcorn.starch.entity.ShowTime;
 @Repository
 public interface ShowTimeRepository extends JpaRepository<ShowTime, Integer>{
 	
-	@Query(nativeQuery = true, value = "Select * from showtime where mid = ?1")
-	public List<ShowTime> getShowTimeByMovieId(int movieid );
+	@Query(nativeQuery = true, value = "Select * from showtime where tid = ?1 and mid = ?2")
+	public List<ShowTime> getShowTimeByMovieId(int theaterid, int movieid );
 }
 
