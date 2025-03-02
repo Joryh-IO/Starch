@@ -7,7 +7,7 @@
 <title>Booking</title>
 
 <link rel="stylesheet" href="${pageContext.request.contextPath}/sty/booking.css" />
-<script src="${pageContext.request.contextPath}/scripts/booking.js"></script>
+
 </head>
 <body>
     <div class="nav">
@@ -18,102 +18,15 @@
             <button>Locality</button>
         </div>
         <div class="buttonset">
-            <button>Profile</button>
+            <button onclick="creategrid" >Profile</button>
             <button>Logout</button>
         </div>
     </div>
     <div class="mega">
         <div class="container">
-            <!-- <h3>Choose seats:</h3> -->
-            <div class="seats">
-                <div class="r">
-                    <div class="chair" onclick="seatpress(event)"></div>
-                    <div class="chair" onclick="seatpress(event)"></div>
-                    <div class="chair" onclick="seatpress(event)"></div>
-                    <div class="chair" onclick="seatpress(event)"></div>
-                    <div class="chair" onclick="seatpress(event)"></div>
-                    <div class="chair" onclick="seatpress(event)"></div>
-                    <div class="chair" onclick="seatpress(event)"></div>
-                    <div class="chair" onclick="seatpress(event)"></div>
-                    <div class="chair" onclick="seatpress(event)"></div>
-                </div>
-                <div class="r">
-                    <div class="chair" onclick="seatpress(event)"></div>
-                    <div class="chair" onclick="seatpress(event)"></div>
-                    <div class="chair" onclick="seatpress(event)"></div>
-                    <div class="chair" onclick="seatpress(event)"></div>
-                    <div class="chair" onclick="seatpress(event)"></div>
-                    <div class="chair" onclick="seatpress(event)"></div>
-                    <div class="chair" onclick="seatpress(event)"></div>
-                    <div class="chair" onclick="seatpress(event)"></div>
-                    <div class="chair" onclick="seatpress(event)"></div>
-                </div>
-                <div class="r">
-                    <div class="chair" onclick="seatpress(event)"></div>
-                    <div class="chair" onclick="seatpress(event)"></div>
-                    <div class="chair" onclick="seatpress(event)"></div>
-                    <div class="chair" onclick="seatpress(event)"></div>
-                    <div class="chair" onclick="seatpress(event)"></div>
-                    <div class="chair" onclick="seatpress(event)"></div>
-                    <div class="chair" onclick="seatpress(event)"></div>
-                    <div class="chair" onclick="seatpress(event)"></div>
-                    <div class="chair" onclick="seatpress(event)"></div>
-                </div>
-                <div class="r">
-                    <div class="chair" onclick="seatpress(event)"></div>
-                    <div class="chair" onclick="seatpress(event)"></div>
-                    <div class="chair" onclick="seatpress(event)"></div>
-                    <div class="chair" onclick="seatpress(event)"></div>
-                    <div class="chair" onclick="seatpress(event)"></div>
-                    <div class="chair" onclick="seatpress(event)"></div>
-                    <div class="chair" onclick="seatpress(event)"></div>
-                    <div class="chair" onclick="seatpress(event)"></div>
-                    <div class="chair" onclick="seatpress(event)"></div>
-                </div><div class="r">
-                    <div class="chair" onclick="seatpress(event)"></div>
-                    <div class="chair" onclick="seatpress(event)"></div>
-                    <div class="chair" onclick="seatpress(event)"></div>
-                    <div class="chair" onclick="seatpress(event)"></div>
-                    <div class="chair" onclick="seatpress(event)"></div>
-                    <div class="chair" onclick="seatpress(event)"></div>
-                    <div class="chair" onclick="seatpress(event)"></div>
-                    <div class="chair" onclick="seatpress(event)"></div>
-                    <div class="chair" onclick="seatpress(event)"></div>
-                </div>
-                <div class="r">
-                    <div class="chair" onclick="seatpress(event)"></div>
-                    <div class="chair" onclick="seatpress(event)"></div>
-                    <div class="chair" onclick="seatpress(event)"></div>
-                    <div class="chair" onclick="seatpress(event)"></div>
-                    <div class="chair" onclick="seatpress(event)"></div>
-                    <div class="chair" onclick="seatpress(event)"></div>
-                    <div class="chair" onclick="seatpress(event)"></div>
-                    <div class="chair" onclick="seatpress(event)"></div>
-                    <div class="chair" onclick="seatpress(event)"></div>
-                </div>
-                <div class="r">
-                    <div class="chair" onclick="seatpress(event)"></div>
-                    <div class="chair" onclick="seatpress(event)"></div>
-                    <div class="chair" onclick="seatpress(event)"></div>
-                    <div class="chair" onclick="seatpress(event)"></div>
-                    <div class="chair" onclick="seatpress(event)"></div>
-                    <div class="chair" onclick="seatpress(event)"></div>
-                    <div class="chair" onclick="seatpress(event)"></div>
-                    <div class="chair" onclick="seatpress(event)"></div>
-                    <div class="chair" onclick="seatpress(event)"></div>
-                </div>
-                <div class="r">
-                    <div class="chair" onclick="seatpress(event)"></div>
-                    <div class="chair" onclick="seatpress(event)"></div>
-                    <div class="chair" onclick="seatpress(event)"></div>
-                    <div class="chair" onclick="seatpress(event)"></div>
-                    <div class="chair" onclick="seatpress(event)"></div>
-                    <div class="chair" onclick="seatpress(event)"></div>
-                    <div class="chair" onclick="seatpress(event)"></div>
-                    <div class="chair" onclick="seatpress(event)"></div>
-                    <div class="chair" onclick="seatpress(event)"></div>
-                </div>
-            </div>
+        
+            <div class="seats"></div>
+            
         </div>
         <div class="rightpanel">
             <div class="top">
@@ -129,23 +42,21 @@
                     </tr>
                     <tr>
                         <td><p>Theater name:</p></td>
-                        <td id="p"></td>
+                        <td id="p">${theater.theaterName }</td>
                     </tr>
                     <tr>
                         <td><p>Location:</p></td>
-                        <td id="p"></td>
+                        <td id="p">${theater.city}, ${theater.address}</td>
                     </tr>
                     <tr>
                         <td><p class="imp">Timings:</p></td>
-                        <td><p id="pe" >10:00pm</td>
+                        <td><p id="pe" >${showtime.starttime }</td>
                     </tr>
                 </table>
                 <hr>
                 <p>Movie info:</p>
-                <p id="opacity">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-                    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-                    Ut enim ad minim veniam,dolor sit amet, consectetur adipiscing elit, 
-                    sed do eiusmod tempor "</p>
+                <p id="opacity">${movie.title} <br> "${movie.description}" <br> 
+                Genre: ${movie.genre} | Duration:  | Language: ${movie.language } | Avg.ratings: ${movie.avgratings} </p>
                 <hr>
                 <table>
                     <tr>
@@ -172,5 +83,6 @@
             </div>
         </div>
     </div>
+    <script src="${pageContext.request.contextPath}/scripts/booking.js"></script>
 </body>
 </html>

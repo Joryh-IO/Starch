@@ -45,34 +45,32 @@
             			<td>${theater.theaterName }</td>
             			<td>${theater.city }</td>
             			<td>${theater.theaterName }</td>
-            			<button onclick="callApi(${theater.tid })">Select</button>
+            			<td><button onclick="callApi(${theater.tid })">Select</button></td>
             		</tr>
-            	</table>
-            
-            <!-- Iteration end -->
+            	</table>            
         </c:forEach>
+        <!-- Iteration end -->
     </div>
 
 
         </div>
     </div>
-
-
-    
-
-
-    
-
-    
-    
-    
     
     
     <div class="theaterlist">
         <h3>ShowTimes:</h3>
-        
-        <!-- Iteration start -->
-        
+        <div class="heading">
+        		<p>index</p>
+                <p>Theater</p>
+                <p>City</p>
+                <p>address</p> 
+                <p>start time</p>
+                <p>end time</p>
+                <p>Seats left</p>
+                <p>click to book</p>
+        </div>
+		<hr>
+        <div class="theatercont" >     
         <div class="slide" id="stcontainer" >
             <div class="data">
             	<p>index</p>
@@ -82,10 +80,9 @@
                 <p>Status</p>
                 <p>start time</p>
                 <p>Seats left</p>
-                <button>Book Now</button>
+                <button onclick="booktheater(event)" >Book Now</button>
             </div>
-            <!-- Iteration end -->
-            
+            </div>
         </div>
     </div>
     

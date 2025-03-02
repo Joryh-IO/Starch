@@ -209,8 +209,9 @@ p{
 
 table{
 	margin:0;
-	padding:0;
+	padding:5px;
 	width:50%;
+	
 }
 td{
     margin: 0;
@@ -220,6 +221,7 @@ td{
 tr{
     margin: 0;
     padding: 0;
+    border: white solid;
 }
 
 
@@ -233,4 +235,10 @@ tr{
 .data2{
 	margin:0;
 	padding:0;
+}
+
+.heading{
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
 }

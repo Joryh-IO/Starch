@@ -34,6 +34,17 @@ public class Theater {
 	
 	@Column(name="modifiedDate")
 	private Date modifiedDate;
+	
+	@Column(name="gridData")
+	private String gridData;
+
+	public String getGridData() {
+		return gridData;
+	}
+
+	public void setGridData(String gridData) {
+		this.gridData = gridData;
+	}
 
 	public String getTheaterName() {
 		return theaterName;

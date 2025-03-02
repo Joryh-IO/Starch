@@ -1,6 +1,6 @@
-const parent = document.getElementsByClassName("theaterlist")[0];
+const parent = document.getElementsByClassName("theatercont")[0];
 const ORIGINAL = document.getElementById("stcontainer");
-
+parent.innerHTML = '';
 
 function callApi(id){
 	const apiUrl = `http://localhost:8085/popcorn/api/showtimes/getspecific?id=${id}`;
@@ -32,7 +32,7 @@ function callApi(id){
 		
 			const div = ORIGINAL;
 			const newdiv = div.cloneNode(true);
-			newdiv.id = 5;
+			//newdiv.id = 5;
 			newdiv.getElementsByTagName("p")[0].textContent= i+1;
 			newdiv.getElementsByTagName("p")[1].textContent= x.theater.theaterName;
 			newdiv.getElementsByTagName("p")[2].textContent= x.theater.city;
@@ -40,6 +40,7 @@ function callApi(id){
 			newdiv.getElementsByTagName("p")[4].textContent= x.starttime;
 			newdiv.getElementsByTagName("p")[5].textContent= x.endtime;
 			newdiv.getElementsByTagName("p")[6].textContent= x.availableseats + " seats";
+			newdiv.getElementsByTagName("button")[0].id = x.stid;
 			
 			parent.appendChild(newdiv);
 			
@@ -47,3 +48,15 @@ function callApi(id){
 			
 	
 }
+
+function booktheater(event) {
+
+	var stid = event.target.id;
+    
+    const url = `/Popcorn/booking/${stid}/`;
+    
+    window.location.href = url;
+}
+
+
+
