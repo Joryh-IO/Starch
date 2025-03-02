@@ -26,4 +26,5 @@ public class ShowTimeService {
 	public Optional<ShowTime> getfromId(int id) {
 		return showTimeRepository.findById(id);
 	}
+	
 }

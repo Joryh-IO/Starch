@@ -1,3 +1,7 @@
+
+
+
+
 document.addEventListener("DOMContentLoaded", function() {
 
 var c =0;
@@ -6,9 +10,8 @@ var perticket = 120;
 var gst = 0.03;
 var seatlist = [];
 
-var grid = "5-A,5-B,3-C,9-D,9-E,9-F,9-G";
 document.getElementsByTagName("td")[13].innerText = gst;
-creategrid(grid);
+
 
 function update(x){
 	document.querySelector("#p").innerHTML = x;
@@ -71,7 +74,28 @@ function creategrid(x){
 }
 
 
+callApi();
 
+function callApi(){
+	var id = document.getElementsByTagName("h3")[0].id;
+	console.log(id);
+	const url = `http://localhost:8085/popcorn/api/showtimes/fromId?id=${id}`;
+	
+	var req = {
+			method:'GET',
+			headers:{'Content-Type': 'application/json'}
+		}
+		fetch(url, req).then(response=>{
+				if (!response.ok) {
+				                throw new Error(`ERROR BRO: ${response.status}`);
+				            }
+				            return response.json();
+			})
+			.then(data => {
+			            //console.log(data.theater.gridData);
+						creategrid(data.theater.gridData);
+			        })
+}
 
 
 

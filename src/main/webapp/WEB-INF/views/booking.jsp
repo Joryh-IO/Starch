@@ -30,7 +30,7 @@
         </div>
         <div class="rightpanel">
             <div class="top">
-                <h3>Summary:</h3>
+                <h3 id="${showtime.stid }" >Summary:</h3>
                 <table>
                     <tr>
                         <td><p>No. of seats booked:</p></td>
@@ -69,7 +69,7 @@
                     </tr>
                     <tr>
                         <td><p class="imp">Gross Total:</p></td>
-                        <td id="pe">1386.2rs</td>
+                        <td id="pe">0</td>
                     </tr>
                 </table>
                 <button>Procced to payment!</button>

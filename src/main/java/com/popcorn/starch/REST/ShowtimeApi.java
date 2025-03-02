@@ -1,6 +1,7 @@
 package com.popcorn.starch.REST;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -29,4 +30,11 @@ public class ShowtimeApi {
 		System.out.println(id);
 		return showTimeService.getSTByMovieId(id, id2);
 	}
+	
+	@RequestMapping("/fromId")
+	public Optional<ShowTime> getShowTime(@RequestParam int id){
+		System.out.println(id);
+		return showTimeService.getfromId(id);
+	}
 }
+
