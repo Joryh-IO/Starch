@@ -14,7 +14,6 @@
         <h2>BOOK</h2>
         <div class="searchcont">
             <input type="text" placeholder="Search...">
-            <img src="sear.png">
             <button>Locality</button>
         </div>
         <div class="buttonset">
@@ -72,7 +71,7 @@
                         <td id="pe">0</td>
                     </tr>
                 </table>
-                <button>Procced to payment!</button>
+                <button id="proceedButton" >Procced to payment!</button>
             </div>
             <div class="bottom">
                 <p>terms and conditions</p>

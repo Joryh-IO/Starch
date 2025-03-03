@@ -9,10 +9,13 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToMany;
+import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
+import jakarta.persistence.UniqueConstraint;
 
 @Entity
-@Table(name="seats")
+@Table(name="seats", uniqueConstraints = @UniqueConstraint(columnNames = {"stid", "name"}))
 public class Seat {
 
 	@Id
@@ -38,6 +41,19 @@ public class Seat {
 	
 	@Column(name="updatedDate")
 	private Date updatedDate;
+	
+	@Column(name="uid")
+	private int userid;
+
+	
+
+	public int getUserid() {
+		return userid;
+	}
+
+	public void setUserid(int userid) {
+		this.userid = userid;
+	}
 
 	public int getSid() {
 		return sid;

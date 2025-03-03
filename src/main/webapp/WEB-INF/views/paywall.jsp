@@ -12,7 +12,6 @@
         <h2>BOOK</h2>
         <div class="searchcont">
             <input type="text" placeholder="Search...">
-            <img src="sear.png">
             <button>Locality</button>
         </div>
         <div class="buttonset">
@@ -20,7 +19,7 @@
             <button>Cancel</button>
         </div>
     </div>
-    <div class="mega">
+    <div class="mega" >
         <div class="leftpanel">
             <div class="profileinfo">
                 <table>
@@ -34,15 +33,15 @@
                     </tr>
                     <tr>
                         <td><p>Theater name:</p></td>
-                        <td id="p"></td>
+                        <td id="p"> ${theater.theaterName }</td>
                     </tr>
                     <tr>
                         <td><p>Location:</p></td>
-                        <td id="p"></td>
+                        <td id="p">${theater.address}, ${theater.city }</td>
                     </tr>
                     <tr>
                         <td><p class="imp">Timings:</p></td>
-                        <td><p id="pe" >10:00pm</td>
+                        <td><p id="pe" >${showtime.starttime }</td>
                     </tr>
                 </table>
             </div>
@@ -66,26 +65,23 @@
             <div class="top">
                 <div>
                     <div class="matter">
-                        <h4>Treding</h4>
-                        <h3>Lost in sea</h3>
-                        <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-                            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-                            Ut enim ad minim veniam,dolor sit amet, consectetur adipiscing elit, 
-                            sed do eiusmod tempor "</p>
+                        <h4 id="1" >Trending</h4>									<!--uid-->
+                        <h3>${currentMovie.title }</h3>
+                        <p>"${currentMovie.description }"</p>
                         <div class="infolist">
-                            <p>ratings: ,</p>
-                            <p>Genre: ,</p>
+                            <p>ratings: ${currentMovie.avgratings},</p>
+                            <p>Genre: ${currentMovie.genre},</p>
                             <p>Duration: ,</p>
-                            <p>Language: </p>
+                            <p>Language: ${currentMovie.language}</p>
                         </div>
                         
                     </div>
             </div>
-                <div class="imagecont">
+                <div class="imagecont" style="background-image: url('${currentMovie.posterUrl}');">
                 </div>    
             </div>
             <div class="bottom">
-                <button >Procced to pay!</button>
+                <button id=${showtime.stid } onclick="done()" >Procced to pay!</button>				<!--stid-->
                 <p>terms and conditions</p>
                     <p id="opacity">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
                         sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
@@ -95,5 +91,6 @@
         </div>
     </div>
     <footer></footer>
+    <script src="${pageContext.request.contextPath}/scripts/paywall.js"></script>
 </body>
 </html>

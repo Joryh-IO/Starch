@@ -1,4 +1,40 @@
+var seatlist = [];
+function sendseats(){
+	
+	for(i=0; i<seatlist.length; i++){
+		const chair = {   
 
+            name: seatlist[i],
+            type: "Standard",
+            availability: "Available",
+            createdDate: "2023-10-01T12:00:00Z",
+            updatedDate: "2023-10-01T12:00:00Z",
+            showTime:{"stid":11} ,
+            userid: 1
+        }
+
+        fetch('http://localhost:8085/popcorn/api/seatsapi/postSeat', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(chair)
+        })
+        .then(response => {
+            if (response.ok) {
+                return response.text();
+            } else {
+                throw new Error('Error: ' + response.statusText);
+            }
+        })
+        .then(data => {
+            console.log(data); 
+        })
+        .catch(error => {
+            console.error('Error:', error);
+        });
+	}
+}
 
 
 
@@ -8,9 +44,33 @@ var c =0;
 var a;
 var perticket = 120;
 var gst = 0.03;
-var seatlist = [];
+
+//send seat info to database
+function seatapi(){
+	
+	for(i=0; i<seatlist.length; i++){
+		var te = new Object();
+		te.sid = seatlist[i];
+		te.type = "standard";
+		te.availability = "pending";
+		te.uid = 1;
+		console.log(JSON.stringify(te));
+	}
+}
 
 document.getElementsByTagName("td")[13].innerText = gst;
+
+
+
+// Add event listener to the button
+document.getElementById("proceedButton").addEventListener("click", function() {
+    // Call the sendseats function
+    sendseats();
+
+    // Redirect to the login page after sendseats() completes
+    window.location.href = 'payment';
+});
+
 
 
 function update(x){
@@ -20,6 +80,8 @@ function update(x){
 	document.getElementsByTagName("td")[3].innerText = seatlist;
 }
 
+
+//click function
 function seatpress(event){
 	
 	var curseat = event.target.id;
@@ -44,6 +106,7 @@ function seatpress(event){
 };
 
 
+// funciton to create grid
 
 function creategrid(x){
 	var gridAr = x.split(",");
@@ -74,6 +137,8 @@ function creategrid(x){
 }
 
 
+
+//API to call seating arrangements
 callApi();
 
 function callApi(){
@@ -96,6 +161,48 @@ function callApi(){
 						creategrid(data.theater.gridData);
 			        })
 }
+
+
+
+
+
+
+
+function block(x){
+	for(i=0;i<x.length;i++){
+		var div = document.getElementById(x[i].name);
+		console.log(div);
+		div.onclick = null;
+		div.style.backgroundColor = "grey";
+	}
+}
+
+bookedseatsapi()
+//function to call for booked seats
+
+function bookedseatsapi(){
+	var id = document.getElementsByTagName("h3")[0].id;
+	const url = `http://localhost:8085/popcorn/api/seatsapi/seatsbystid?id=${id}`;
+	
+	var req = {
+			method:'GET',
+			headers:{'Content-Type': 'application/json'}
+		}
+		fetch(url, req).then(response=>{
+				if (!response.ok) {
+				                throw new Error(`ERROR BRO: ${response.status}`);
+				            }
+				            return response.json();
+			})
+			.then(data => {
+			            console.log(data);
+						block(data);
+						//creategrid(data.theater.gridData);
+			        })
+					
+				
+}
+
 
 
 
