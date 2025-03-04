@@ -1,0 +1,52 @@
+select * from movies;
+select * from theaters;
+show tables;
+select * from movie_theaters;
+select * from payments;
+Select * from seats ;
+select * from users;
+
+
+
+
+drop table seats;
+
+INSERT INTO movies (mid, title, genre, language, description, avgratings, created_date) 
+VALUES 
+(1, 'Inception', 'Sci-Fi', 'English', 'A mind-bending journey through dreams within dreams, where reality is never what it seems.', 8.8, '2010-07-16'),
+(2, 'The Shawshank Redemption', 'Drama', 'English', 'A tale of hope and friendship that transcends the walls of a prison.', 9.3, '1994-09-23'),
+(3, 'The Dark Knight', 'Action', 'English', 'A gripping story of chaos and heroism, where the line between good and evil blurs.', 9.0, '2008-07-18'),
+(4, 'Spirited Away', 'Animation', 'Japanese', 'A magical adventure into a world of spirits, where a young girl discovers her inner strength.', 8.6, '2001-07-20'),
+(5, 'Parasite', 'Thriller', 'Korean', 'A darkly comedic exploration of class struggle and family dynamics.', 8.6, '2019-05-21'),
+(6, 'Interstellar', 'Sci-Fi', 'English', 'A heart-wrenching journey across space and time to save humanity.', 8.6, '2014-11-07'),
+(7, 'The Godfather', 'Crime', 'English', 'A powerful saga of family, loyalty, and the cost of power.', 9.2, '1972-03-24'),
+(8, 'Your Name', 'Romance', 'Japanese', 'A beautifully animated tale of love and connection across time and space.', 8.4, '2016-08-26'),
+(9, 'Pulp Fiction', 'Crime', 'English', 'A nonlinear masterpiece of crime, humor, and unforgettable characters.', 8.9, '1994-10-14'),
+(10, 'The Lion King', 'Animation', 'English', 'A timeless story of courage, family, and finding one’s place in the world.', 8.5, '1994-06-15'),
+(11, 'Fight Club', 'Drama', 'English', 'A provocative exploration of identity, consumerism, and rebellion.', 8.8, '1999-10-15'),
+(12, 'The Matrix', 'Sci-Fi', 'English', 'A groundbreaking film that questions the nature of reality and freedom.', 8.7, '1999-03-31'),
+(13, 'Forrest Gump', 'Drama', 'English', 'A heartwarming journey through decades of American history, seen through the eyes of a simple man.', 8.8, '1994-07-06'),
+(14, 'Gladiator', 'Action', 'English', 'A tale of revenge, honor, and redemption in the Roman Empire.', 8.5, '2000-05-05'),
+(15, 'Coco', 'Animation', 'English', 'A vibrant celebration of family, music, and the power of remembering loved ones.', 8.4, '2017-11-22'),
+(16, 'The Grand Budapest Hotel', 'Comedy', 'English', 'A whimsical and visually stunning tale of adventure and friendship.', 8.1, '2014-03-28'),
+(17, 'The Social Network', 'Biography', 'English', 'The riveting story of the creation of Facebook and the complexities of ambition.', 7.7, '2010-10-01'),
+(18, 'Whiplash', 'Drama', 'English', 'An intense and electrifying exploration of ambition, passion, and the pursuit of greatness.', 8.5, '2014-10-10'),
+(19, 'La La Land', 'Musical', 'English', 'A modern-day musical about dreams, love, and the sacrifices we make for them.', 8.0, '2016-12-09'),
+(20, 'The Avengers', 'Action', 'English', 'A superhero epic that brings together Earth’s mightiest heroes to save the world.', 8.0, '2012-05-04');
+
+
+INSERT INTO movies (mid, title, genre, language, description, avgratings, created_date) 
+VALUES 
+(21, 'Baahubali: The Beginning', 'Action', 'Telugu', 'A grand epic of courage, betrayal, and destiny, set in the majestic kingdom of Mahishmati.', 8.0, '2015-07-10'),
+(22, '3 Idiots', 'Comedy-Drama', 'Hindi', 'A heartwarming story about friendship, ambition, and the pursuit of knowledge, with a touch of humor.', 8.4, '2009-12-25'),
+(23, 'Pariyerum Perumal', 'Drama', 'Tamil', 'A powerful tale of caste discrimination and resilience, told through the eyes of a young law student.', 8.6, '2018-09-28'),
+(24, 'Kumbalangi Nights', 'Drama', 'Malayalam', 'A beautifully crafted story of family, love, and redemption set in a quaint fishing village.', 8.5, '2019-02-07'),
+(25, 'Drishyam', 'Thriller', 'Hindi', 'A gripping tale of a common man’s extraordinary efforts to protect his family from a shocking crime.', 8.2, '2015-07-31');
+
+
+
+
+
+select * from showtime;
+select * from theaters;
+update seats set availability='booked' where uid = ?1 and availability= 'pending' and stid=?2;

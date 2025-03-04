@@ -1,0 +1,53 @@
+User -> HomepageController: Browse Movies
+HomepageController -> MovieService: getMovies()
+MovieService -> MovieRepository: findAll()
+MovieRepository --> MovieService: List<Movie>
+MovieService --> HomepageController: List<Movie>
+HomepageController --> User: Display Movies
+
+User -> LoginController: Login
+LoginController -> LoginService: authenticate(user)
+LoginService -> UserRepository: findByUsername(username)
+UserRepository --> LoginService: User
+LoginService --> LoginController: Authentication Result
+LoginController --> User: Login Success/Failure
+
+User -> MovieController: Select Movie
+MovieController -> MovieService: getMovieDetails(movieId)
+MovieService -> MovieRepository: findById(movieId)
+MovieRepository --> MovieService: Movie
+MovieService --> MovieController: Movie Details
+MovieController --> User: Display Movie Details
+
+User -> ShowTimeController: View Showtimes
+ShowTimeController -> ShowTimeService: getShowTimes(movieId)
+ShowTimeService -> ShowTimeRepository: findByMovieId(movieId)
+ShowTimeRepository --> ShowTimeService: List<ShowTime>
+ShowTimeService --> ShowTimeController: List<ShowTime>
+ShowTimeController --> User: Display Showtimes
+
+User -> SeatController: Select Seat
+SeatController -> SeatService: getAvailableSeats(showTimeId)
+SeatService -> SeatRepository: findByShowTimeId(showTimeId)
+SeatRepository --> SeatService: List<Seat>
+SeatService --> SeatController: List<Seat>
+SeatController --> User: Display Available Seats
+
+User -> BookingController: Confirm Booking
+BookingController -> BookingService: createBooking(user, showTime, seat)
+BookingService -> BookingRepository: save(booking)
+BookingRepository --> BookingService: Booking
+BookingService --> BookingController: Booking Confirmation
+BookingController --> User: Booking Confirmation
+
+User -> PaywallController: Process Payment
+PaywallController -> PaymentService: processPayment(booking)
+PaymentService --> PaywallController: Payment Status
+PaywallController --> User: Payment Success/Failure
+
+User -> ProfileController: Update Profile
+ProfileController -> UserService: updateProfile(user)
+UserService -> UserRepository: save(user)
+UserRepository --> UserService: User
+UserService --> ProfileController: Profile Update Status
+ProfileController --> User: Profile Update Success/Failure
